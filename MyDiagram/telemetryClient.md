@@ -1,5 +1,5 @@
 ```mermaid
-graph LR
+graph TD
 A[TelemetryClient] --> B(TelemetryItem)
 B --> B1[name]
 B --> B2[connectionString]

@@ -1,8 +1,10 @@
 ```mermaid
 graph TD
+O[autoService]-->A
+O-->AA
 A[secondEntryPoint]-->|customize|B(getConfiguration)
 AA[firstEntryPoint]-->B
-B-->|buildTelemetryClient|D(autoConfiguration)
+B-->|client proxy|D(telemetryClient)
 D-->DD(AiConfigCustomizer)
 DD-->DDD(properties)
 D-->D1(spanExporter)

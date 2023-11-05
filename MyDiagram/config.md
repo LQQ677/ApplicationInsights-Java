@@ -1,12 +1,11 @@
 ```mermaid
 graph TD
-A[Configuration] -->|agentJarPath| B(loadConfigurationFile)
-B --> C{extractConfigFromProperty}
-C -->|!= null file|D(getConfigurationFromConfigFile)
-C -->|null string|E{getConfiguration}
-E -->|!= null|F(mapper.treeToValue)
-E -->|null|G{extractConfigFromJsonNextToAgentJar}
-G -->|!= null|H(configFromJsonNextToAgent)
+A[Configuration] -->|getEnvVar|B1(getConfigurationFromEnvVar)
+B1 -->|!=null|B2(config)
+B1 --> |agentJarPath|C(mapper.treeToValue)
+C --> |!=null|C1(config)
+C -->|nextToAgentJar|G(extractConfigFile)
+G -->|!= null|H(config)
 G -->|null|I(default Configuration)
 
 ```
