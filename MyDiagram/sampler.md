@@ -27,5 +27,4 @@ Q --> |null|E
 Q --> |!=null| R(new Sampler with override.percentage)
 R --> K
 
-K ---> |used by|T(AgentLogExporter)
 ```

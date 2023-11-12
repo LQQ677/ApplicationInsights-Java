@@ -2,9 +2,8 @@
 graph TD
 O[autoService]-->A
 O-->AA
-A[secondEntryPoint]-->|customize|B(getConfiguration)
-AA[firstEntryPoint]-->B
-B-->|client proxy|D(telemetryClient)
+AA[firstEntryPoint]-->|getConfiguration|D(telemetryClient)
+A[secondEntryPoint]-->|customize|D
 D-->DD(AiConfigCustomizer)
 DD-->DDD(properties)
 D-->D1(spanExporter)

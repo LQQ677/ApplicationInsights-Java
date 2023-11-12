@@ -1,14 +1,7 @@
 ```mermaid
 graph TD
-A[TelemetryClient] --> B(TelemetryItem)
-B --> B1[name]
-B --> B2[connectionString]
-B --> B3[data]
-
-A --> C(trackAsync)
-B1 --> C
-B2 --> C
-B3 --> C
+A[TelemetryClient] --> |trackAsync|C(TelemetryItem)
+B1[span/logs/metrics] --> C
 
 C --> D{isMetricData?}
 D --> |Yes|E(MetricBatchItemProcessor)

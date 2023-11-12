@@ -1,8 +1,8 @@
 ```mermaid
-graph TD
-A[Exporter] --> |SecondEntryPoint|A1(AgentLogExporter)
-A --> |SecondEntryPoint|A2(AgentMetricExporter)
-A --> |SecondEntryPoint|A3(AgentSpanExporter)
+graph LR
+A[Exporter] --> A1(AgentLogExporter)
+A --> A2(AgentMetricExporter)
+A --> A3(AgentSpanExporter)
 
 A1 --> |export|B((iter logs))
 B --> B1(log.getSpan)
